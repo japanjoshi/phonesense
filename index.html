@@ -51,7 +51,7 @@
       background: var(--night);
       color: var(--text);
       font: 18px/1.6 var(--sans);
-      overflow-x: hidden;
+      overflow-x: clip;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { color: var(--moon); }
@@ -81,12 +81,12 @@
       background: radial-gradient(circle at 35% 35%, #FFF1D6 0%, var(--moon) 55%, #E0A960 100%);
       box-shadow: 0 0 18px 2px rgba(242,201,138,.35);
     }
-    .nav-links { display: flex; gap: 22px; font-size: 16px; }
+    .nav-links { display: flex; gap: 22px; font-size: 16px; white-space: nowrap; }
     .nav-links a { color: var(--muted); text-decoration: none; }
     .nav-links a:hover { color: var(--text); }
 
     /* Hero */
-    .hero { position: relative; z-index: 1; text-align: center; padding: 48px 0 0; }
+    .hero { position: relative; z-index: 1; text-align: center; padding: 48px 0 0; overflow: hidden; }
     .eyebrow {
       display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
       color: var(--moon); border: 1px solid rgba(242,201,138,.35); background: rgba(242,201,138,.08);
@@ -207,7 +207,7 @@
       section { padding: 72px 0; }
       .nav-links { gap: 16px; }
     }
-    @media (max-width: 420px) { .nav-links a.hide-sm { display: none; } }
+    @media (max-width: 520px) { .nav-links a.hide-sm { display: none; } }
     /* On a phone the three phones run wider than the screen, so they read. */
     @media (max-width: 640px) {
       .hero-shot { width: 170%; max-width: none; margin-left: -35%; }
