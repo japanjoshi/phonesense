@@ -15,6 +15,8 @@
   <title>PhoneSense: Stop scrolling past bedtime</title>
   <meta name="description" content="PhoneSense puts a gentle pause in front of the apps that keep you up at night. One slow breath, then you choose. Never locked out. No account, no ads.">
   <meta name="theme-color" content="#0E0F1A">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta property="og:title" content="PhoneSense: Stop scrolling past bedtime">
   <meta property="og:description" content="A gentle pause before your apps at night. Never locked out. No account, no ads.">
   <meta property="og:image" content="https://japanjoshi.github.io/phonesense/images/hero.jpg">
@@ -76,11 +78,8 @@
     /* Navigation */
     .nav { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding-top: 22px; padding-bottom: 22px; }
     .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 22px; }
-    .moon-dot {
-      width: 26px; height: 26px; border-radius: 50%; flex: none;
-      background: radial-gradient(circle at 35% 35%, #FFF1D6 0%, var(--moon) 55%, #E0A960 100%);
-      box-shadow: 0 0 18px 2px rgba(242,201,138,.35);
-    }
+    /* The app icon, rounded the way iOS rounds it. */
+    .logo { width: 34px; height: 34px; border-radius: 22.5%; flex: none; box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 4px 16px rgba(0,0,0,.4); }
     .nav-links { display: flex; gap: 22px; font-size: 16px; white-space: nowrap; }
     .nav-links a { color: var(--muted); text-decoration: none; }
     .nav-links a:hover { color: var(--text); }
@@ -106,12 +105,7 @@
     .tick { width: 18px; height: 18px; border-radius: 50%; background: var(--calm); color: var(--night); display: grid; place-items: center; font-size: 12px; font-weight: 800; }
     .soon { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
     .soon strong { color: var(--text); font-weight: 600; }
-    .hero-shot {
-      margin: 44px auto 0; width: 100%; max-width: 1100px;
-      /* Fade every edge into the sky, so the picture has no frame. */
-      -webkit-mask-image: radial-gradient(ellipse 62% 78% at 50% 38%, #000 62%, transparent 100%);
-      mask-image: radial-gradient(ellipse 62% 78% at 50% 38%, #000 62%, transparent 100%);
-    }
+    .hero-shot { margin: 40px auto 0; width: 100%; max-width: 1080px; }
 
     /* Sections */
     section { position: relative; z-index: 1; padding: 96px 0; }
@@ -191,15 +185,16 @@
 
     /* Closing */
     .closing { text-align: center; padding-bottom: 120px; }
-    .closing .moon-big {
-      width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 30px;
-      background: radial-gradient(circle at 35% 35%, #FFF1D6 0%, var(--moon) 55%, #E0A960 100%);
-      box-shadow: 0 0 90px 20px rgba(242,201,138,.22);
+    .closing .icon-big {
+      width: 132px; height: 132px; border-radius: 22.5%; margin: 0 auto 30px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 0 90px 10px rgba(242,201,138,.18), 0 20px 50px rgba(0,0,0,.5);
     }
 
     footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; color: var(--muted); font-size: 15px; position: relative; z-index: 1; }
     footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; }
     footer nav { display: flex; gap: 22px; }
+    .foot-brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .foot-brand .logo { width: 28px; height: 28px; }
     footer a { color: var(--muted); }
 
     @media (max-width: 860px) {
@@ -210,7 +205,6 @@
     @media (max-width: 520px) { .nav-links a.hide-sm { display: none; } }
     /* On a phone the three phones run wider than the screen, so they read. */
     @media (max-width: 640px) {
-      .hero-shot { width: 170%; max-width: none; margin-left: -35%; }
       .brand { font-size: 20px; }
     }
   </style>
@@ -219,7 +213,7 @@
 <div class="sky" aria-hidden="true"></div>
 
 <header class="wrap nav">
-  <a class="brand" href="./"><span class="moon-dot" aria-hidden="true"></span>PhoneSense</a>
+  <a class="brand" href="./"><img class="logo" src="images/logo.png" width="34" height="34" alt="">PhoneSense</a>
   <nav class="nav-links" aria-label="Site">
     <a class="hide-sm" href="#how">How it works</a>
     <a href="support.html">Support</a>
@@ -240,7 +234,7 @@
       </ul>
       <p class="soon"><strong>Coming soon</strong> to the App Store and Google Play</p>
     </div>
-    <img class="hero-shot" src="images/hero.jpg" width="2000" height="906"
+    <img class="hero-shot" src="images/hero.jpg" width="2400" height="1462"
          alt="Three iPhones: PhoneSense asking what brought you there, the pause at 12:46 saying you wanted to be off by 11:30, and the next morning showing you put your phone down at 11:20.">
   </div>
 
@@ -394,7 +388,7 @@
 
   <section class="closing">
     <div class="wrap">
-      <div class="moon-big" aria-hidden="true"></div>
+      <img class="icon-big" src="images/logo.png" width="132" height="132" alt="The PhoneSense app icon: a full moon in a night sky.">
       <h2 style="margin-left:auto;margin-right:auto">Your nights, <em>back</em>.</h2>
       <p class="soon"><strong>Coming soon</strong> to the App Store and Google Play</p>
     </div>
@@ -403,7 +397,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 OnePrism LLP · <a href="mailto:info@oneprisminnovations.com">info@oneprisminnovations.com</a></span>
+    <span class="foot-brand"><img class="logo" src="images/logo.png" width="34" height="34" alt="">© 2026 OnePrism LLP · <a href="mailto:info@oneprisminnovations.com">info@oneprisminnovations.com</a></span>
     <nav aria-label="Footer">
       <a href="support.html">Support</a>
       <a href="privacy-policy.html">Privacy policy</a>
