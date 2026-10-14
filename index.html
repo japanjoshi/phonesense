@@ -53,7 +53,7 @@
       font: 18px/1.6 var(--sans);
       overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; height: auto; display: block; }
     a { color: var(--moon); }
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
@@ -106,7 +106,12 @@
     .tick { width: 18px; height: 18px; border-radius: 50%; background: var(--calm); color: var(--night); display: grid; place-items: center; font-size: 12px; font-weight: 800; }
     .soon { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
     .soon strong { color: var(--text); font-weight: 600; }
-    .hero-shot { margin: 44px auto 0; max-width: 1100px; -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent); mask-image: linear-gradient(to bottom, #000 70%, transparent); }
+    .hero-shot {
+      margin: 44px auto 0; width: 100%; max-width: 1100px;
+      /* Fade every edge into the sky, so the picture has no frame. */
+      -webkit-mask-image: radial-gradient(ellipse 62% 78% at 50% 38%, #000 62%, transparent 100%);
+      mask-image: radial-gradient(ellipse 62% 78% at 50% 38%, #000 62%, transparent 100%);
+    }
 
     /* Sections */
     section { position: relative; z-index: 1; padding: 96px 0; }
